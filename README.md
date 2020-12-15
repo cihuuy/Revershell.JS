@@ -1,4 +1,3 @@
-:>-----------------------------------------------------------<:
 ★x1 필수 설치파일
 1) Node.js
     1. (windows) https://nodejs.org/ko/download/
@@ -6,6 +5,7 @@
     3. (Linux) yum install node
 2) PKG //에이전트 파일 생성
     1. npm install pkg --g
+
 :>-----------------------------------------------------------<:
 ★x2 코드 수정(result.js)
 1) 리버스쉘을 연결할 서버 호스트(HOST_Address, HOST_PORT) 등록
