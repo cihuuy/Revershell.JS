@@ -1,0 +1,1 @@
+start cmd /k pkg result.js --out-path ./results/
