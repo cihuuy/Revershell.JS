@@ -5,8 +5,8 @@ const mngVersion = {
 
 const net = require("net");
 let server = new net.Server();
-const Host = '0.0.0.0';
-const Port = 111;
+const Host = '0.0.0.0'; // Fixed
+const Port = 111; //Listen 할 포트 입력
 
 
 const serverOn = () => {
@@ -14,7 +14,7 @@ const serverOn = () => {
         console.log(`:>>> Revershell Server ${mngVersion.version} <<<:`);
         console.log(`:>> Wait for a connection from the client side. <<:`);
         server.listen({ host: Host, port: Port }, () => {
-            console.log(`ReverseSehll Server listen in ${'111'}`);
+            console.log(`ReverseSehll Server listen in ${Port}`);
         });
     }, 1000)
 }
@@ -32,9 +32,6 @@ const serverConnectionEventHandler = (socket) => {
     console.log("new connection");
 
     //send a command
-    process.stdin.resume(()=> {
-        console.log('test command')
-    });
     process.stdin.on('data',function(send){
         socket.write(send);
     });
