@@ -1,1 +1,1 @@
-start cmd /k pkg result.js --out-path ./results/
+start cmd /k pkg client.js --out-path ./results/
