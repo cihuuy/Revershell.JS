@@ -4,8 +4,8 @@ const mngVersion = {
 }
 const net = require("net")
 const childprocess = require("child_process")
-const HOST_PORT = 1010; // [서버 포트 입력]
-const HOST_Address = 127.0.0.1 // [도메인 입력]
+const HOST_PORT = 18196; // [서버 포트 입력]
+const HOST_Address = 0.tcp.eu.ngrok.io // [도메인 입력]
 
 
 let retrying = false; 
